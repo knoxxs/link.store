@@ -14,9 +14,12 @@
     "scripts": [
       "src/bg/init.js",
       "src/bg/repo/repo.js",
+      "src/bg/model/init.js",
+      "src/bg/model/linkModel.js",
       "src/bg/service/init.js",
-      "src/bg/service/link.js",
-      "src/bg/service/linkVisit.js"
+      "src/bg/service/linkService.js",
+      "src/bg/service/linkVisitService.js",
+      "src/bg/listener/historyListener.js"
     ],
     "persistent": true
   },
