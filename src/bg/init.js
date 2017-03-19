@@ -1,0 +1,2 @@
+var ls = {};
+var $ = undefined;
