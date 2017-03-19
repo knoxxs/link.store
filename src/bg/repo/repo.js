@@ -1,4 +1,5 @@
-(function (ls, $) {
+//todo does outer scope needed?
+ls.repo = function (type) {
     function _checkAndGetStore(type) {
         var typeStore = localStorage[type];
         if (!typeStore) {
@@ -9,11 +10,9 @@
         return typeStore;
     }
 
-    function save(type, data) {
+    this.type = type;
+    this.save = function (data) {
         var store = _checkAndGetStore(type);
         store.push(data);
-    }
-
-    ls.repo = {};
-    ls.repo.save = save;
-}(ls, $));
+    };
+};
