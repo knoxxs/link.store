@@ -1,11 +1,10 @@
 (function (ls, $) {
-    var type = "link";
-
+    var repo = new ls.repo("link");
     ls.service.link = {
         save: function (link) {
             //todo add business logic
 
-            ls.repo.save(type, link);
+            repo.save(link);
         },
         remove: function () {
 
