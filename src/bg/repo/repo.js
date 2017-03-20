@@ -1,4 +1,3 @@
-//todo race conditions will come
 ls.repo = function (type) {
     this.type = type;
 
