@@ -6,8 +6,8 @@
 
             repo.save(link);
         },
-        remove: function () {
-
+        search: function () {
+            return "dummyResult";
         }
     };
 }(ls, $));

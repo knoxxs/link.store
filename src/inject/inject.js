@@ -12,6 +12,13 @@ function bindSearchBoxChange() {
 }
 
 function onSearch() {
-    //console.log("val: " + $(this).val());
-    console.log("val: " + this.value);
+    chrome.runtime.sendMessage({"mType": "search_query", "query": this.value});
 }
+
+chrome.runtime.onMessage.addListener(
+    function (request, sender, sendResponse) {
+        if (request.mType === "search_response") {
+            console.log("results: " + request.results);
+        }
+    }
+);

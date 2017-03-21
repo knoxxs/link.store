@@ -19,6 +19,7 @@
       "src/bg/service/init.js",
       "src/bg/service/linkService.js",
       "src/bg/service/linkVisitService.js",
+      "src/bg/service/searchService.js",
       "src/bg/listener/historyListener.js"
     ],
     "persistent": true
