@@ -36,9 +36,10 @@
   "content_scripts": [
     {
       "matches": [
-        "https://*.sgoogle.co.in/*"
+        "<all_urls>"
       ],
       "js": [
+        "js/jquery-3.2.0.min.js",
         "src/inject/inject.js"
       ]
     }
