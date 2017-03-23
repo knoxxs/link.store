@@ -1,3 +1,3 @@
-(function (ls, $) {
+(function (ls) {
     ls.service = {};
-}(ls, $));
+}(ls));
