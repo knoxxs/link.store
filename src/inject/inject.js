@@ -18,7 +18,7 @@ function onSearch() {
 chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
         if (request.mType === "search_response") {
-            console.log("results: " + request.results);
+            console.log("results: " + JSON.stringify(request.results));
         }
     }
 );

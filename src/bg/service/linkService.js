@@ -1,4 +1,4 @@
-(function (ls, $) {
+(function (ls) {
     var repo = new ls.repo("link");
     var index = _loadOrCreateIndex();
 
@@ -21,7 +21,22 @@
 
     function _indexDoc(link) {
         console.log("indexing: " + JSON.stringify(link));
+        var html;
+        $.ajax({
+            url: link.url,
+            success: function (result) {
+                html = result;
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log(xhr.status);
+                console.log(thrownError);
+            },
+            async: false
+        });
+
+        link.html = html;
         index.addDoc(link);
+        delete link.html;
     }
 
     function _loadOrCreateIndex() {
@@ -34,8 +49,9 @@
             console.log("creating index");
             return elasticlunr(function () {
                 this.addField('url');
+                this.addField('html');
                 this.setRef('id');
             });
         }
     }
-}(ls, $));
+}(ls));
