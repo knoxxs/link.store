@@ -12,6 +12,7 @@
   "default_locale": "en",
   "background": {
     "scripts": [
+      "js/elasticlunr.min.js",
       "src/bg/init.js",
       "src/bg/repo/repo.js",
       "src/bg/model/init.js",

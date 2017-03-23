@@ -4,7 +4,7 @@ ls.repo = function (type) {
     function _getCollection(type) {
         var stringifyCollection = localStorage[type];
         if (!stringifyCollection) {
-            stringifyCollection = JSON.stringify([]);
+            stringifyCollection = JSON.stringify({});
             localStorage[type] = stringifyCollection;
         }
 
@@ -17,7 +17,20 @@ ls.repo = function (type) {
 
     this.save = function (data) {
         var collection = _getCollection(type);
-        collection.push(data);
+        collection[data.id] = data;
         _saveCollection(type, collection);
     };
+
+    this.searchByIds = function (ids) {
+        var results = [];
+        var collection = _getCollection(type);
+        ids.forEach(function (id) {
+            var data = collection[id];
+            if (data) {
+                results.push(data);
+            }
+        });
+
+        return results;
+    }
 };
